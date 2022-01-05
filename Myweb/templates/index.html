@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<title>Student_Show</title>
 </head>
 <body>
-<h1>1hello world</h1>
+<h1>The Students Here at Dataflair</h1>
+<div>
+<ul>
+{% for stud in student %}
+<li>
+<h2>Name {{ stud.name }}</h2>
+<p> department {{ stud.department}}</p>
+<p> class {{ stud.standard}}</p>
+</li>
+{% endfor %}
+</ul>
+</div>
 </body>
 </html>
