@@ -1,5 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
-def index(request):
-    return render(request, "index.html", context={'hello': 'world'})
+from .models import Student
+def student_show(request):
+student = Student.objects.order_by('roll_no')
+return render(request, 'template/index.html', {'student': student})
