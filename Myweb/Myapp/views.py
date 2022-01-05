@@ -1,4 +1,14 @@
-from .models import Student
-def student_show(request):
-student = Student.objects.order_by('roll_no')
-return render(request, 'template/index.html', {'student': student})
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('', views.Myapp, name='Myapp'),
+]
+
+from django.http import HttpResponse
+def Myapp(request):
+    x = []
+    for i in range(10):
+        x.append(i)
+    return HttpResponse("<h1>DataFlair Django Tutorials</h1>The Digits are {0}".format(x))
