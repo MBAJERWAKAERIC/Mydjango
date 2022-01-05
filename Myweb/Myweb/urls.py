@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import Myweb.Myapp.models
+from Myweb.Myapp import urls
+from Myweb.Myapp.models import Myapp
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Myweb.Myapp.models.Myapp/', include('Myapp.urls')),
 ]
